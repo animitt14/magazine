@@ -251,21 +251,25 @@
   <div class="page-num">6</div>
 </div>
 <!-- P7: ARTPRICE CHART -->
-<div class="page" style="background:#f7f5f1;">
-  <div class="content">
-    <div class="pull-quote" style="font-size:24px;border-color:#1a1a1a;">"The Artprice100© index has outpaced the S&amp;P 500 since 2000, but there has been no way to invest in the products it features. Masterworks is the first company to offer art investment products to the public."
-      <div class="quote-attr">Scott Lynn — Founder &amp; CEO</div>
-    </div>
-    <div class="col-head" style="margin-bottom:12px;">Annual Growth of the Artprice100© vs S&amp;P 500 (2000 – 2026)</div>
-    <div class="chart-legend">
-      <div class="cl-item"><div class="cl-solid"></div><span>Artprice100©</span></div>
-      <div class="cl-item"><div class="cl-dashed"></div><span style="color:#3a7d3a;">S&amp;P 500</span></div>
-    </div>
-    <div style="position:relative;width:100%;height:340px;">
-      <canvas id="artChart"></canvas>
-    </div>
-    <div class="disclaimer" style="margin-top:8px;">Source: Artprice.com. Past performance is not indicative of future results.</div>
+<div class="page" style="background:#f7f5f1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 60px;text-align:center;position:relative;overflow:hidden;">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-style:italic;font-weight:400;line-height:1.4;color:#1a1a1a;max-width:600px;margin:0 auto 32px;">
+    &ldquo;The Artprice100&copy; index has outpaced the S&amp;P 500 since 2000, but there has been no way to invest in it. Masterworks is the first company to offer art investment products to the retail investing public.&rdquo;
   </div>
+  <div style="font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#888;">Scott Lynn &mdash; Founder &amp; CEO</div>
+  <div style="margin-top:40px;font-family:'DM Sans',sans-serif;font-size:11px;color:#777;max-width:480px;text-align:center;line-height:1.6;">
+    Serial entrepreneur. Personal art collection ranked among the Top 100 in the United States. Works lent to the Museum of Modern Art and the Solomon R. Guggenheim Museum.
+  </div>
+
+  <div style="margin-top:56px;width:100%;max-width:680px;">
+    <div style="font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#1a1a1a;margin-bottom:4px;">Artprice100&copy; vs S&amp;P 500</div>
+    <div style="font-family:'Inter',sans-serif;font-size:8px;color:#777;margin-bottom:12px;">Source: Artprice.com</div>
+    <div style="display:flex;justify-content:flex-end;gap:20px;margin-bottom:8px;font-family:'Inter',sans-serif;font-size:9px;font-weight:600;color:#888;">
+      <span style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:20px;height:2px;background:#1a1a1a;"></span> Artprice100&copy;</span>
+      <span style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:20px;height:0;border-top:2px dashed #2d8a4e;"></span> S&amp;P 500</span>
+    </div>
+    <canvas id="artChart" width="620" height="340"></canvas>
+  </div>
+
   <div class="page-num">7</div>
 </div>
 <!-- P8: ART MARKET -->
@@ -866,46 +870,72 @@
   </div>
 </div>
 <script>
-const labels = ['2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'];
-const art = [100,111,111,122,135,164,179,231,320,281,235,303,355,334,385,452,489,397,460,480,496,505,689,709,720,660,734];
-const sp = [100,90,78,60,76,82,85,97,100,61,76,86,86,97,126,140,140,153,182,171,220,256,324,260,323,402,468];
-new Chart(document.getElementById('artChart'), {
-  type: 'line',
-  data: {
-    labels,
-    datasets: [
-      { label: 'Artprice100', data: art, borderColor: '#1a1a1a', borderWidth: 2.5, pointRadius: 0, pointHoverRadius: 4, tension: 0.3, fill: false },
-      { label: 'S&P 500', data: sp, borderColor: '#3a7d3a', borderWidth: 2, borderDash: [6,4], pointRadius: 0, pointHoverRadius: 4, tension: 0.3, fill: false }
-    ]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: { mode: 'index', intersect: false }
+document.addEventListener('DOMContentLoaded', function() {
+  const labels = ['2000','','','','','2005','','','','','2010','','','','','2015','','','','','2020','','','','','2025','2026'];
+  const art = [100,111,111,122,135,164,179,231,320,281,235,303,355,334,385,452,489,397,460,480,496,505,689,709,720,660,734];
+  const sp  = [100,90,78,60,76,82,85,97,100,61,76,86,86,97,126,140,140,153,182,171,220,256,324,260,323,402,468];
+
+  new Chart(document.getElementById('artChart'), {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Artprice100\u00a9',
+          data: art,
+          borderColor: '#1a1a1a',
+          backgroundColor: 'rgba(26,26,26,0.05)',
+          borderWidth: 2.5,
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: 'S&P 500',
+          data: sp,
+          borderColor: '#2d8a4e',
+          backgroundColor: 'rgba(45,138,78,0.05)',
+          borderWidth: 2.5,
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          tension: 0.3,
+          borderDash: [6, 3],
+          fill: false
+        }
+      ]
     },
-    scales: {
-      x: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: 'Inter', size: 11 }, color: '#888', maxTicksLimit: 8 } },
-      y: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: 'Inter', size: 11 }, color: '#888' }, min: 0, max: 800 }
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1a1a',
+          titleFont: { family: "'Inter', sans-serif", size: 10 },
+          bodyFont: { family: "'DM Sans', sans-serif", size: 11 },
+          padding: 10,
+          cornerRadius: 2
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          title: { display: true, text: 'Year', font: { family: "'Inter', sans-serif", size: 9, weight: '600' }, color: '#aaa', padding: { top: 8 } },
+          ticks: { font: { family: "'Inter', sans-serif", size: 8 }, color: '#aaa', maxRotation: 0 },
+          border: { color: '#e8e4de' }
+        },
+        y: {
+          grid: { color: 'rgba(0,0,0,0.04)', drawBorder: false },
+          title: { display: true, text: 'Index Value (Base 100)', font: { family: "'Inter', sans-serif", size: 9, weight: '600' }, color: '#aaa', padding: { bottom: 8 } },
+          ticks: { font: { family: "'Inter', sans-serif", size: 8 }, color: '#aaa' },
+          border: { display: false },
+          min: 0,
+          max: 800
+        }
+      }
     }
-  },
-  plugins: [{
-    id: 'endLabels',
-    afterDraw(chart) {
-      const ctx = chart.ctx;
-      chart.data.datasets.forEach((ds, i) => {
-        const meta = chart.getDatasetMeta(i);
-        const last = meta.data[meta.data.length - 1];
-        const val = ds.data[ds.data.length - 1];
-        ctx.save();
-        ctx.fillStyle = ds.borderColor;
-        ctx.font = '700 12px Inter, sans-serif';
-        ctx.textAlign = 'left';
-        ctx.fillText(val, last.x + 6, last.y + 4);
-        ctx.restore();
-      });
-    }
-  }]
+  });
 });
 </script>
 </body>
