@@ -55,10 +55,10 @@
   .art-caption .artist { font-size: 10px; letter-spacing: 0.15em; color: #fff; text-transform: uppercase; display: block; margin-bottom: 2px; }
   .art-caption .title { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: #fff; display: block; margin-bottom: 2px; }
   .art-caption .medium { font-size: 10px; color: rgba(255,255,255,0.7); display: block; }
-  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 48px; }
-  .toc-item { display: flex; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 0.5px solid #e8e8e8; }
-  .toc-num { font-family: 'Inter', sans-serif; font-size: 11px; color: #aaa; width: 24px; flex-shrink: 0; }
-  .toc-title { font-family: 'Inter', sans-serif; font-size: 13px; color: #1a1a1a; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; margin-top: 48px; flex: 1; align-content: space-between; }
+  .toc-item { display: flex; align-items: baseline; gap: 12px; padding: 18px 0; border-bottom: 0.5px solid #e8e8e8; }
+  .toc-num { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; color: #aaa; width: 28px; flex-shrink: 0; }
+  .toc-title { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; color: #1a1a1a; }
   .disc-text { font-family: 'DM Sans', sans-serif; font-size: 9.5px; color: #555; line-height: 1.6; column-count: 2; column-gap: 40px; }
   .disc-text p { margin-bottom: 8px; }
   .disc-italic { font-style: italic; }
@@ -180,8 +180,8 @@
   </div>
 </div>
 <!-- P4: TABLE OF CONTENTS -->
-<div class="page">
-  <div class="content">
+<div class="page" style="display:flex;flex-direction:column;">
+  <div class="content" style="flex:1;display:flex;flex-direction:column;padding-bottom:48px;">
     <div class="section-label">Table of Contents</div>
     <div class="pg-title">TABLE OF</div>
     <div class="pg-subtitle">Contents</div>
