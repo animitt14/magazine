@@ -132,16 +132,20 @@
   .collection-caption .c-artist { font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: 0.12em; color: rgba(255,255,255,0.7); text-transform: uppercase; display: block; }
   .collection-caption .c-title { font-family: 'Cormorant Garamond', serif; font-size: 13px; font-style: italic; color: #fff; display: block; }
   .collection-caption .c-year { font-family: 'Inter', sans-serif; font-size: 10px; color: rgba(255,255,255,0.5); display: block; margin-top: 2px; }
-  .close-page { background: #000; min-height: 1056px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+  .close-page { background: #000; min-height: 1056px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 0 72px; }
   .close-logo { font-family: 'Inter', sans-serif; font-size: 14px; letter-spacing: 0.2em; color: #fff; text-transform: uppercase; }
-  .close-title { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-style: italic; color: #fff; font-weight: normal; text-align: center; line-height: 1.2; }
-  .close-sub { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #aaa; text-align: center; line-height: 1.8; }
-  .close-url { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.15em; color: #fff; text-transform: uppercase; }
-  .close-disc { font-family: 'DM Sans', sans-serif; font-size: 9px; color: #555; text-align: center; max-width: 600px; line-height: 1.6; margin-top: 16px; }
-  .back-cover { background: #000; min-height: 1056px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-  .back-logo { font-family: 'Inter', sans-serif; font-size: 14px; letter-spacing: 0.2em; color: #fff; text-transform: uppercase; margin-bottom: 16px; }
+  .close-title-bold { font-family: 'Inter', sans-serif; font-size: 56px; font-weight: 800; color: #fff; text-align: center; letter-spacing: 0.02em; }
+  .close-title-italic { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-style: italic; color: #fff; font-weight: normal; text-align: center; margin-top: -8px; }
+  .close-divider { width: 60px; height: 1px; background: #fff; margin: 8px 0; }
+  .close-sub { font-family: 'DM Sans', sans-serif; font-size: 14px; color: #aaa; text-align: center; line-height: 1.8; }
+  .close-url { font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.15em; color: #fff; text-transform: uppercase; font-weight: 600; }
+  .close-disc { font-family: 'DM Sans', sans-serif; font-size: 7.5px; color: #666; text-align: left; line-height: 1.5; position: absolute; bottom: 32px; left: 48px; right: 48px; }
+  .close-disc p { margin: 0 0 6px 0; }
+  .back-cover { background: #000; min-height: 1056px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 80px; }
+  .back-logo { font-family: 'Inter', sans-serif; font-size: 14px; letter-spacing: 0.2em; color: #fff; text-transform: uppercase; margin-bottom: 24px; }
   .back-tagline { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-style: italic; color: #aaa; font-weight: normal; }
-  .back-addr { font-family: 'Inter', sans-serif; font-size: 11px; color: #555; text-align: center; line-height: 2; margin-top: 24px; }
+  .back-divider { width: 50px; height: 1px; background: #555; margin: 20px 0; }
+  .back-addr { font-family: 'Inter', sans-serif; font-size: 10px; color: #555; text-align: center; line-height: 2.2; letter-spacing: 0.12em; text-transform: uppercase; }
   .disclaimer { font-family: 'DM Sans', sans-serif; font-size: 9px; color: #aaa; line-height: 1.5; margin-top: 20px; font-style: italic; }
   .chart-legend { display: flex; gap: 24px; margin-bottom: 12px; }
   .cl-item { display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 11px; color: #555; }
@@ -823,12 +827,12 @@
     <div class="pg-subtitle">Team</div>
     <div class="leader-grid" style="gap:28px;">
       <div>
-        <img src="https://cdn.prod.website-files.com/646bac3fe3028f716f75e63f/65204bd1a3ba78de31d33c6c_614b6b6fd969358656af4bf0_Scott-Lynn.jpeg" alt="Scott Lynn" style="width:88px;height:88px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+        <img src="https://media.licdn.com/dms/image/v2/C5603AQE9sNBv83Wjtw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633380764362?e=1779926400&v=beta&t=9s0ZXKrODe8Xq8ps1zNxof531CRaP0kH6FTzUL3FEV8" alt="Scott Lynn" style="width:88px;height:88px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
         <div class="leader-name">Scott Lynn</div><div class="leader-title">Founder &amp; Chief Executive Officer</div>
         <p class="leader-bio">Serial entrepreneur who previously founded Treeloot (mobile gaming, backed by Intel Capital), Adknowledge (grown to $300M+ in revenue), and Payability (processed $6B+ in financing). Personal art collection ranked among the Top 100 in the US, with works lent to the Museum of Modern Art and the Solomon R. Guggenheim Museum.</p>
       </div>
       <div>
-        <img src="https://flaia-cms-assets.s3.amazonaws.com/nigel_1_4d37bbd5ca.webp" alt="Nigel Glenday" style="width:88px;height:88px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGIbW97g9DlgQ/profile-displayphoto-shrink_400_400/B4EZUgNN3rHgAg-/0/1740002090786?e=1779926400&v=beta&t=78EIqU9j27QAqCjaZgrKpV70GZfev65924sXEvYLPSk" alt="Nigel Glenday" style="width:88px;height:88px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
         <div class="leader-name">Nigel Glenday</div><div class="leader-title">Chief Operating Officer</div>
         <p class="leader-bio">Scaled operations for the $1.2B publicly securitized art collection. Career spanning specialty finance, corporate strategy, and investment banking. Previously Managing Director for Strategy at Athena Art Finance (Carlyle Group) and financial institutions banker at UBS and Morgan Stanley.</p>
       </div>
@@ -847,21 +851,28 @@
   <div class="page-num" style="color:#1a1a1a;">37</div>
 </div>
 <!-- P38: BEGIN YOUR COLLECTION -->
-<div class="page">
+<div class="page" style="padding:0;">
   <div class="close-page">
-    <div class="close-logo">MASTERW<span style="display:inline-block;width:16px;height:16px;border:2px solid #fff;border-radius:50%;margin:0 1px;vertical-align:middle;"></span>RKS</div>
-    <div class="close-title">BEGIN YOUR<br><em>Collection</em></div>
+    <div class="close-logo">MASTERW<span style="display:inline-block;width:16px;height:16px;border:2px solid #fff;margin:0 2px;vertical-align:middle;"></span>RKS</div>
+    <div class="close-title-bold">BEGIN YOUR</div>
+    <div class="close-title-italic">Collection</div>
+    <div class="close-divider"></div>
     <div class="close-sub">Speak with a representative from Masterworks Advisers to<br>determine which investment structure is right for you.</div>
-    <div class="close-url">MASTERWORKS.COM/LEVEL</div>
-    <div class="close-disc">NOTE: Masterworks Advisers and Masterworks operate as separate legal entities and provide materially different services. Advisory services are provided exclusively to clients who have received the Masterworks Advisers' Form ADV and have executed an advisory agreement with MWA. MWA AND ITS REPRESENTATIVES ARE SUBJECT TO CONFLICTS OF INTEREST IN CONNECTION WITH THE ADVICE THAT THEY PROVIDE AND ARE EXCLUSIVELY DEDICATED TO PROVIDING ADVISORY SERVICES WITH RESPECT TO MASTERWORKS SECURITIES.</div>
+    <div class="close-url">MASTERWORKS.COM/ADVISERS</div>
+    <div class="close-disc">
+      <p>NOTE: Masterworks Advisers and Masterworks operate as separate legal entities and provide materially different services. Advisory services are provided exclusively to clients who have received the Masterworks Advisers' Form ADV and have executed an advisory agreement with MWA. To learn more about MWA's advisory services, including fees and conflicts of interest, see Form ADV Part 2A.</p>
+      <p>MWA AND ITS REPRESENTATIVES ARE SUBJECT TO CONFLICTS OF INTEREST IN CONNECTION WITH THE ADVICE THAT THEY PROVIDE AND ARE EXCLUSIVELY DEDICATED TO PROVIDING ADVISORY SERVICES WITH RESPECT TO MASTERWORKS SECURITIES. BY MOVING FORWARD WITH AN INVESTMENT IN A MASTERWORKS SECURITY BASED ON AN INVESTMENT RECOMMENDATION, YOU ACKNOWLEDGE OUR DISCLOSURE OF SUCH CONFLICT AND ACCEPT THE EXISTENCE OF SUCH CONFLICT.</p>
+    </div>
   </div>
 </div>
 <!-- P39: BACK COVER -->
-<div class="page">
+<div class="page" style="padding:0;">
   <div class="back-cover">
-    <div class="back-logo">MASTERW<span style="display:inline-block;width:16px;height:16px;border:2px solid #555;border-radius:50%;margin:0 1px;vertical-align:middle;"></span>RKS</div>
-    <div class="back-tagline">The Art of Investing</div>
-    <div class="back-addr">MASTERWORKS, LLC<br>1 WORLD TRADE CENTER, 57TH FLOOR<br>NEW YORK, NY 10007<br>MASTERWORKS.COM</div>
+    <div class="back-logo">MASTERW<span style="display:inline-block;width:16px;height:16px;border:2px solid #555;margin:0 2px;vertical-align:middle;"></span>RKS</div>
+    <div class="back-tagline"><em>The Art of Investing</em></div>
+    <div class="back-divider"></div>
+    <div class="back-addr">MASTERWORKS, LLC<br>1 WORLD TRADE CENTER, 57TH FLOOR<br>NEW YORK, NY 10007</div>
+    <div style="font-family:'Inter',sans-serif;font-size:10px;color:#555;letter-spacing:0.12em;text-transform:uppercase;margin-top:12px;">MASTERWORKS.COM</div>
   </div>
 </div>
 <script>
